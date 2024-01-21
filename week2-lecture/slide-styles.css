@@ -65,6 +65,11 @@ sup{
   max-width: 100%;
 }
 
+.slide.divider h2{
+  border: 1px solid var(--grey);
+  border-radius: 50%;
+}
+
 .slide footer{
   width: 100%;
   position: absolute;
@@ -81,6 +86,10 @@ sup{
 
 .slide h2 {
   font-size: 2.5rem;
+  text-align: center;
+  line-height: 1.15;
+}
+.slide h2 + p{
   text-align: center;
 }
 .slide ul{
@@ -155,8 +164,13 @@ ul li::before{
   text-transform: none;
 }
 
-table{
+.table{
   margin: auto;
+  margin-top: var(--pad);
+}
+table{
+  font-size: .75em;
+  width: 100%;
 }
 th{
   text-align: left;
@@ -165,6 +179,12 @@ th{
 }
 td, th{
   padding: 0.5em;
+  vertical-align: top;
+}
+td{
+  text-transform: none;
+  width: 30%;
+  min-width: 25%;
 }
 td:first-child, th:first-child{
   padding-left: 0;
