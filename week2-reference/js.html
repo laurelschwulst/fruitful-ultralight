@@ -283,8 +283,8 @@
 					</details>
 
 			<details><summary>JSON Notation</summary>
-			<p>Basic JSON is a string like the following, with the quotations around the object keys. It can be setup from within the JavaScript file and assigned to a variable.</p>
-					<pre><code>
+			<p>Basic JSON is a string like the following, with the quotations around the object keys. It can be setup from within the JavaScript file and assigned to a variable. Note that we are comma-separating each <code>"key": value</code> pair, but there is no comma after the last item.</p>
+<pre><code>
 /* .js */
 var color = {
 	"name" : "mycolor", 
@@ -292,16 +292,75 @@ var color = {
 	"g": 0,
 	"b": 0
 };</code></pre>
-						<p>it’s easy for JSON data to get bulky and complex. In this case, JSON can be loaded into your project as a stand alone file. There should be no variables in this file — it is just an object that starts with the curly brackets.</p>
+					<p>This is equivalent to a table that looks like this:</p>
+					<table>
+						<tr><th>name</th><th>r</th><th>g</th><th>b</th></tr>
+						<tr><td>mycolor</td><td>255</td><td>0</td><td>0</td></tr>
+					</table>
+
+You could have multiple objects stored in an array using square brackets <code>[]</code> (See more about arrays and how you use them in the <a href="#data-types">data types</a> section.) 
+<pre><code>
+/* .js */
+var colors = [
+{
+	"name" : "red", 
+	"r": 255,
+	"g": 0,
+	"b": 0
+},
+{
+	"name" : "green", 
+	"r": 0,
+	"g": 255,
+	"b": 0
+},
+{
+	"name" : "blue", 
+	"r": 0,
+	"g": 0,
+	"b": 255
+}
+];</code></pre>
+					<p>This is equivalent to data in a table that looks like this:</p>
+					<table>
+						<tr><th>name</th><th>r</th><th>g</th><th>b</th></tr>
+						<tr><td>red</td><td>255</td><td>0</td><td>0</td></tr>
+						<tr><td>green</td><td>0</td><td>255</td><td>0</td></tr>
+						<tr><td>blue</td><td>0</td><td>0</td><td>255</td></tr>
+					</table>
+
+					<p>We can also use a “hashed” representation of this same table, using the first column as the way to setup keys for each item. The resulting data would then be a json object that contains objects, rather than an array (notice wer’re using the curly braces <code>{}</code> instead of the square brackets.) Depending on how you want to access and use the data, having those keys may be more useful</p>
+
+<pre><code>
+/* .js */
+var colors = {
+	"red":{
+		"r": 255,
+		"g": 0,
+		"b": 0
+	},
+	"green":{
+		"r": 0,
+		"g": 255,
+		"b": 0
+	},
+	"blue":{
+		"r": 0,
+		"g": 0,
+		"b": 255
+	}
+}
+</code></pre>
+
+						<p>if you have a large data set, it’s easy for JSON data to get bulky and complex. In this case, JSON can be loaded into your project as a stand alone file. There should be no variables in this file — it is just an object that starts with the curly brackets.</p>
 						<pre><code>				
-/* .json */
+/* .json file might look like this*/
 {
 	"name" : "mycolor",
 	"r": 255,
 	"g": 0,
 	"b": 0
 }</code></pre>
-
 			</details>
 
 			<details><summary>JSON Syntax</summary>
@@ -309,7 +368,7 @@ var color = {
 			<p>JSON data can contain more than one object, it and also lets you create nested arrays.</p>
 							<pre><code>
 /* .js */
-var shapes = {
+var data = {
 		"myshape": [
 			{ 
 				"shape": "circle", // this is data object [0]
@@ -339,26 +398,26 @@ var color = {
 	"b": 0
 };
 
-var shapes = {
-		"myshape": [
-			{ 
-				"shape": "circle", // this is data object [0]
-				"r": 0,
-				"g": 255,
-				"b": 0 
-			},
-			{ 
-				"shape": "square", // this is data object [1]
-				"r": 255,
-				"g": 0,
-				"b": 0 
-			}
-		]
-	};
+var data = {
+	"myshape": [
+		{ 
+			"shape": "circle", // this is data object [0]
+			"r": 0,
+			"g": 255,
+			"b": 0 
+		},
+		{ 
+			"shape": "square", // this is data object [1]
+			"r": 255,
+			"g": 0,
+			"b": 0 
+		}
+	]
+};
 color.name //mycolor
 color.r //255
-shapes.myshape[0].r //0
-shapes.myshape[1].shape //square
+data.myshape[0].r //0
+data.myshape[1].shape //square
 				</code></pre>					 
 
 				</details>
