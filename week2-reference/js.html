@@ -32,8 +32,6 @@
 			<li>Use an API via HTTP(S)</li>
 		</ul>
 		
-		
-
 		<h2 id="setup">Setup</h2>
 		<p>Like CSS, JavaScript can be included within the <code>&lt;head&gt;&lt;/head&gt;</code> your <code>html</code> file as well as linked as an external file. It can also be included at the bottom of your document, right before the closing <code>&lt;/body&gt;</code> tag.</p>
 		<pre class="language-html"><code class="language-html"><span class="token comment">&lt;!-- Internal JavaScript --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">language</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>  JavaScript code <br></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br><br><span class="token comment">&lt;!-- External JavaScript --></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">language</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>js/filename.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
@@ -148,7 +146,7 @@
 
 		<details><summary>Comparison</summary>
 		<p>Comparison evaluates an expression, returning a boolean, <code>true</code> or <code>false</code>.<br>
-			Below are some examples — these are <strong>strict</strong> comparison formats, meaning they will check both the data type and the value.</p>
+			Below are some examples. (Note: <code>===</code> indicates <strong>strict</strong> comparison formats, meaning they will check both the data type and the value. <code>==</code> also works, but won’t be strict with data types — a common example is comparing a number with a true number data type, compared with a number that is actually represented as a string data type. <code> 9 == '9'</code> evaluates to <code>true</code>,  while <code> 9 === '9'</code> evaluates to <code>false</code>.) </p>
 			<table>
 				<thead>
 					<tr>
@@ -166,8 +164,12 @@
 						<td>checks whether they are NOT equal</td>
 					</tr>
 					<tr>
-						<td><code>&lt;</code> or <code>&gt;</code></td>
-						<td>checks that the number on the left is less than or greater than the right</td>
+						<td><code>&lt;</code> / <code>&gt;</code></td>
+						<td>checks that the number on the left is less than / greater than the right</td>
+					</tr>
+					<tr>
+						<td><code>&le;</code> / <code>&ge;</code></td>
+						<td>checks that the number on the left is less than or equal to / greater than or equal to the right</td>
 					</tr>
 				</tbody>
 			</table>

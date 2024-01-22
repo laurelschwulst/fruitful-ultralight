@@ -242,6 +242,7 @@
 					milliseconds since epoch
 				</td>
 				<td>
+					0– 2,147,483,647 <sup><a href="#ref-1">1</a></sup>
 				</td>
 				<td>
 					1705860059000
@@ -504,7 +505,7 @@ now.toLocaleDateString("en-US", {
 		</table>
 
 		<p>
-			** Note: Using <code>now.toLocaleString()</code> without a <em>locale (<code>en-US</code>)</em> parameter but with a <code>timeZone</code> parameter produces unexpected results. Always specify the locale if not using your local timezone. You can refer to this <a href="iso-language-and-country-codes.txt">table</a> for possible combinations of ISO language and country codes, with more details on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locales_argument">locales parameter on MDN</a>. See <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank">list of timezones</a> to see possible values for timeZone.
+			** Note: Using <code>now.toLocaleString()</code> without a <em>locale</em> (<code>en-US</code>) but with a <code>timeZone</code> option produces unexpected results. Always specify the locale if not using your local timezone. You can refer to this <a href="iso-language-and-country-codes.txt">table</a> for possible combinations of ISO language and country codes, with more details on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locales_argument">locales parameter on MDN</a>. See <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank">list of timezones</a> to see possible values for timeZone.
 		</p>
 	</details>
 
@@ -636,7 +637,7 @@ now.toLocaleDateString("en-US", {
 		notes and caveats
 	</h3>
 	<ol>
-		<li id="ref-1">epoch refers to january 1, 1970, 00:00:00 UTC, a time arbitrarily chosen as “convenient” by Unix engineers. (Unix is a representation of time used in computing, stored in seconds. There is also a potential  problem similar to “Y2K”, known as the <a href="https://en.wikipedia.org/wiki/Year_2038_problem">the Year 2038 problem</a>, with 32-bit computers storing time in the Unix format.) </li>
+		<li id="ref-1">epoch refers to january 1, 1970, 00:00:00 UTC, a time arbitrarily chosen as “convenient” by Unix engineers. (Unix is a representation of time used in computing, stored in seconds. There is also a potential  problem similar to “Y2K”, known as the <a href="https://en.wikipedia.org/wiki/Year_2038_problem">the Year 2038 problem</a>, with 32-bit computers storing time in the Unix format. The latest time that can be stored in 32bits is is 2<sup>31</sup> − 1 = 2,147,483,647 seconds after epoch, which is 03:14:07 on Tuesday, 19 January 2038. ) </li>
 		<li id="ref-2">browser behavior can be inconsistent in how it treats dates initialized without a timezone, so it is generally best to define time explicitly</li>
 		<li id="ref-3">even though you may have stored the date/time given a particular timezone offset, the default way it will display to you will still be converted to your local timezone.</li>
 		<li id="ref-4">the international standard iso 8601 lists time in the following order: year (yyyy), month (mm), day(dd), hour(hh), minutes(mm), seconds(ss), milliseconds(sss), and timezone offset(z, or +/- followed by hh:mm).</li>
